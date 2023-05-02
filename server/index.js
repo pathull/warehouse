@@ -22,18 +22,18 @@ app.post('/api/warehouses', async (req, res) => {
     const result = await db.query('SELECT COUNT(*) FROM shelves WHERE zone = $1', [zone]);
     const count = parseInt(result.rows[0].count);
     if (count + shelves.length > 10) {
-      return res.status(400).json({ message: 'Zone has reached maximum number of shelves' });
+      return res.status(400).json({ message: 'A zone has reached maximum number of shelves. Max shelves for each zone is 10' });
     }
 
     // Start transaction
     await db.query('BEGIN');
 
     // Insert warehouse
-    const warehouseResult = await db.query('INSERT INTO warehouses (name, zone) VALUES ($1, $2) RETURNING id', [name, zone]);
+    const warehouseResult = await db.query('INSERT INTO warehouses (name) VALUES ($1) RETURNING id', [name]);
     const warehouseId = parseInt(warehouseResult.rows[0].id);
 
     // Insert shelves
-    const values = shelves.map((shelf) => `('${shelf.name}', ${warehouseId}, ${zone})`).join(',');
+    const values = shelves.map((shelf) => `('${shelf.name}', ${warehouseId}, ${shelf.zone})`).join(',');
     await db.query(`INSERT INTO shelves (name, warehouse_id, zone) VALUES ${values}`);
 
     // Commit transaction
@@ -43,7 +43,7 @@ app.post('/api/warehouses', async (req, res) => {
   } catch (err) {
     await db.query('ROLLBACK');
     console.error(err);
-    return res.status(500).json({ message: 'Error creating warehouse' });
+    return res.status(500).json({ message: 'Error creating warehouse. Make sure shelf names are unique'});
   }
 });
 
