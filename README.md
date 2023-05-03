@@ -39,12 +39,13 @@ PGHOST=
 PGPASSWORD=
 PGDATABASE=
 PGPORT=
+```
 
 2. Run development server
 ```shell
 npm start
 ```
-```
+
 
 ### Frontend
 1. Run react in developer mode
