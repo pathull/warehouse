@@ -117,51 +117,51 @@ export default function WarehouseForm() {
       <p>Shelf Count by Zone</p>
       <div className='zone-counts-container'>
         <div>
-          <p>Z - 1</p>
+          <p>Z-1</p>
           <p className="zone-counts">{zoneCounts[0]}</p>
         </div>
         <div>
-          <p>Z - 2</p>
+          <p>Z-2</p>
           <p className="zone-counts">{zoneCounts[1]}</p>
         </div>
         <div>
-          <p>Z - 3</p>
+          <p>Z-3</p>
           <p className="zone-counts">{zoneCounts[2]}</p>
         </div>
         <div>
-          <p>Z - 4</p>
+          <p>Z-4</p>
           <p className="zone-counts">{zoneCounts[3]}</p>
         </div>
         <div>
-          <p>Z - 5</p>
+          <p>Z-5</p>
           <p className="zone-counts">{zoneCounts[4]}</p>
         </div>
         <div>
-          <p>Z - 6</p>
+          <p>Z-6</p>
           <p className="zone-counts">{zoneCounts[5]}</p>
         </div>
         <div>
-          <p>Z - 7</p>
+          <p>Z-7</p>
           <p className="zone-counts">{zoneCounts[6]}</p>
         </div>
         <div>
-          <p>Z - 8</p>
+          <p>Z-8</p>
           <p className="zone-counts">{zoneCounts[7]}</p>
         </div>
         <div>
-          <p>Z - 9</p>
+          <p>Z-9</p>
           <p className="zone-counts">{zoneCounts[8]}</p>
         </div>
         <div>
-          <p>Z - 10</p>
+          <p>Z-10</p>
           <p className="zone-counts">{zoneCounts[9]}</p>
         </div>
         <div>
-          <p>Z - 11</p>
+          <p>Z-11</p>
           <p className="zone-counts">{zoneCounts[10]}</p>
         </div>
         <div>
-          <p>Z - 12</p>
+          <p>Z-12</p>
           <p className="zone-counts">{zoneCounts[11]}</p>
         </div>
       </div>
