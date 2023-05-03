@@ -28,7 +28,7 @@ npm install
 ```
 
 ### Backend
-1. Server is using PSQL database, You should create a postgres database with the name of your preferences and create a .env file with the following keys
+1. Server is using PSQL database. You should create a postgres database with the name of your preferences and create a .env file with the following keys
 ```js
 // SERVER APPLICATION
 PORT=3001
@@ -43,6 +43,7 @@ PGPORT=
 2. Run development server
 ```shell
 npm start
+```
 ```
 
 ### Frontend
