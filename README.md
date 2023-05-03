@@ -56,7 +56,7 @@ CREATE TABLE warehouses (
 );
 ```
 
-2. Run development server
+3. Run development server
 ```shell
 npm start
 ```
