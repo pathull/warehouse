@@ -7,7 +7,6 @@ const cors = require('cors')
 const app = express()
 const db = require("./db")
 
-
 //Middleware
 app.use(morgan("tiny"));
 app.use(express.json())
@@ -43,7 +42,7 @@ app.post('/api/warehouses', async (req, res) => {
   } catch (err) {
     await db.query('ROLLBACK');
     console.error(err);
-    return res.status(500).json({ message: 'Error creating warehouse. Make sure shelf names are unique'});
+    return res.status(500).json({ message: 'Error creating warehouse. Make sure shelf names are unique' });
   }
 });
 

@@ -36,16 +36,16 @@ export default function WarehouseForm() {
 
   const addShelf = () => {
     const newShelf = { name: '', zone: 1 };
-  setShelves([...shelves, newShelf]);
-  setShelfCount(shelves.length + 1);
+    setShelves([...shelves, newShelf]);
+    setShelfCount(shelves.length + 1);
 
-  // Increment counter for the zone of the new shelf
-   const zone = newShelf.zone;
+    // Increment counter for the zone of the new shelf
+    const zone = newShelf.zone;
     setZoneCounts(prev => {
-    const newCounter = [...prev];
-    newCounter[zone - 1] += 1;
-    return newCounter;
-  });
+      const newCounter = [...prev];
+      newCounter[zone - 1] += 1;
+      return newCounter;
+    });
   }
 
   const deleteShelf = (index) => {
@@ -60,7 +60,7 @@ export default function WarehouseForm() {
     setShelfCount(newShelves.length);
   }
 
-  const resetFormOnSubmit = () => {
+  const resetForm = () => {
     setName('')
     setShelves([])
     setShelfCount(0);
@@ -89,7 +89,7 @@ export default function WarehouseForm() {
       const message = await response.text();
       alert(message);
     }
-    resetFormOnSubmit();
+    resetForm();
   };
 
   return (
@@ -116,58 +116,58 @@ export default function WarehouseForm() {
       </div>
       <p>Shelf Count by Zone</p>
       <div className='zone-counts-container'>
-      <div>
-      <p>Z - 1</p>
-      <p className="zone-counts">{zoneCounts[0]}</p>
-      </div>
-      <div>
-      <p>Z - 2</p>
-      <p className="zone-counts">{zoneCounts[1]}</p>
-      </div>
-      <div>
-      <p>Z - 3</p>
-      <p className="zone-counts">{zoneCounts[2]}</p>
-      </div>
-      <div>
-      <p>Z - 4</p>
-      <p className="zone-counts">{zoneCounts[3]}</p>
-      </div>
-      <div>
-      <p>Z - 5</p>
-      <p className="zone-counts">{zoneCounts[4]}</p>
-      </div>
-      <div>
-      <p>Z - 6</p>
-      <p className="zone-counts">{zoneCounts[5]}</p>
-      </div>
-      <div>
-      <p>Z - 7</p>
-      <p className="zone-counts">{zoneCounts[6]}</p>
-      </div>
-      <div>
-      <p>Z - 8</p>
-      <p className="zone-counts">{zoneCounts[7]}</p>
-      </div>
-      <div>
-      <p>Z - 9</p>
-      <p className="zone-counts">{zoneCounts[8]}</p>
-      </div>
-      <div>
-      <p>Z - 10</p>
-      <p className="zone-counts">{zoneCounts[9]}</p>
-      </div>
-      <div>
-      <p>Z - 11</p>
-      <p className="zone-counts">{zoneCounts[10]}</p>
-      </div>
-      <div>
-      <p>Z - 12</p>
-      <p className="zone-counts">{zoneCounts[11]}</p>
-      </div>
+        <div>
+          <p>Z - 1</p>
+          <p className="zone-counts">{zoneCounts[0]}</p>
+        </div>
+        <div>
+          <p>Z - 2</p>
+          <p className="zone-counts">{zoneCounts[1]}</p>
+        </div>
+        <div>
+          <p>Z - 3</p>
+          <p className="zone-counts">{zoneCounts[2]}</p>
+        </div>
+        <div>
+          <p>Z - 4</p>
+          <p className="zone-counts">{zoneCounts[3]}</p>
+        </div>
+        <div>
+          <p>Z - 5</p>
+          <p className="zone-counts">{zoneCounts[4]}</p>
+        </div>
+        <div>
+          <p>Z - 6</p>
+          <p className="zone-counts">{zoneCounts[5]}</p>
+        </div>
+        <div>
+          <p>Z - 7</p>
+          <p className="zone-counts">{zoneCounts[6]}</p>
+        </div>
+        <div>
+          <p>Z - 8</p>
+          <p className="zone-counts">{zoneCounts[7]}</p>
+        </div>
+        <div>
+          <p>Z - 9</p>
+          <p className="zone-counts">{zoneCounts[8]}</p>
+        </div>
+        <div>
+          <p>Z - 10</p>
+          <p className="zone-counts">{zoneCounts[9]}</p>
+        </div>
+        <div>
+          <p>Z - 11</p>
+          <p className="zone-counts">{zoneCounts[10]}</p>
+        </div>
+        <div>
+          <p>Z - 12</p>
+          <p className="zone-counts">{zoneCounts[11]}</p>
+        </div>
       </div>
       <p>{`Total Warehouse Shelves: ${shelfCount}`}</p>
       <button type="submit">Submit Warehouse Layout</button>
-      <p className="reset-button" onClick={resetFormOnSubmit}>Delete Warehouse</p>
+      <p className="reset-button" onClick={resetForm}>Delete Warehouse</p>
     </form>
   );
 }
