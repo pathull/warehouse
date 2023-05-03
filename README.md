@@ -41,6 +41,21 @@ PGDATABASE=
 PGPORT=
 ```
 
+2. For reference, here are the queries I used for the SQL tables
+```shell
+CREATE TABLE shelves (
+    id BIGSERIAL NOT NULL PRIMARY KEY,
+    name VARCHAR(50) NOT NULL UNIQUE,
+    warehouse_id INTEGER REFERENCES warehouses(id),
+    zone INTEGER NOT NULL check(zone >= 1 and zone <= 12)
+);
+
+CREATE TABLE warehouses (
+    id BIGSERIAL NOT NULL PRIMARY KEY,
+    name VARCHAR(50) NOT NULL
+);
+```
+
 2. Run development server
 ```shell
 npm start
