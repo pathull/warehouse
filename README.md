@@ -1,6 +1,6 @@
 # warehouse
 
-Event Planner App is a platform where you can create, manage, track, and update events seamlessly. Invite friends, colleagues, or family to event pages where you can chat and organize event resources all in one place. No more spreadsheets and unorganized group chats. 
+The app let's users create a warehouse layout, adding shelves to zones. The UI let's users see where shelves are being assigned within the 12 zones in a warehouse. Users can add as many shelves to a warehouse as they want, but each zone only holds 10 shelves. Therefor, the app does not let users submit more than 10 shelves to a zone. Shelf names must be unique, and the app will not let users submit a warehouse layout containing duplicate shelf names. 
 
 ## Screenshot
 
