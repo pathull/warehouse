@@ -41,7 +41,7 @@ PGDATABASE=
 PGPORT=
 ```
 
-2. For reference, here are the commands I used for the SQL tables/relations
+2. For reference, here are the queries I used for the SQL tables/relations
 ```shell
 CREATE TABLE shelves (
     id BIGSERIAL NOT NULL PRIMARY KEY,
