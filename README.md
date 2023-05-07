@@ -58,6 +58,7 @@ CREATE TABLE warehouses (
 
 3. Run development server
 ```shell
+cd server
 npm start
 ```
 
@@ -65,5 +66,6 @@ npm start
 ### Frontend
 1. Run react in developer mode
 ```shell
+cd client
 npm start
 ```
