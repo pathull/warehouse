@@ -84,7 +84,7 @@ export default function WarehouseForm() {
       // handle error response
       const errorMessage = await response.text();
       alert(errorMessage);
-      return;
+      return false;
     } else if (response.ok) {
       const message = await response.text();
       alert(message);
